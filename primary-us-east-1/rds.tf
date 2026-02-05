@@ -8,8 +8,8 @@ resource "aws_db_instance" "master" {
     db_name = "mydb"
     engine = "mysql"
     engine_version = "8.0"
-    username = "admin"
-    password = "cloud123"
+    username = var.rds-password
+    password = var.rds-password
     skip_final_snapshot = true
     vpc_security_group_ids = [ aws_security_group.book-rds-sg.id ]
     publicly_accessible = false
